@@ -1,0 +1,11 @@
+# Use the Python 3.10 base image
+FROM python:3.10
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
+
+RUN mkdir /code
+WORKDIR /code
+COPY ./server.py .
+
+ENTRYPOINT ["python", "./server.py"]
